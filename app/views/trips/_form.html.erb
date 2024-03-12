@@ -4,3 +4,6 @@
     <%= form.input :departure, label: 'When are you leaving?' %>
     <%= form.button :submit, 'Add trip', class: 'btn btn-primary w-100' %>
   <% end %>
+  <%= f.input :arrival,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
