@@ -3,8 +3,8 @@
     <%= form.input :photo, as: :file %>
     <%= form.input :first_name%>
     <%= form.input :last_name%>
-    <%# <%= form.input :interest%> 
-    <p>interest is to be done<p>
+    <%= form.input :interests, collection: @interests, as: :check_boxes %>
+
     <%= form.button :submit, 'Update profile', class: 'btn btn-primary w-100' %>
 
   <% end %>

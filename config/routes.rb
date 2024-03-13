@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :trips
   resources :users
+  
+  resources :trips, only: [:destroy]
 end
