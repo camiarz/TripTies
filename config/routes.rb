@@ -9,8 +9,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :trips
+  resources :trips do
+    resources :matches
+  end 
   resources :users
+<<<<<<< HEAD
   
   resources :trips, only: [:destroy]
+=======
+
+>>>>>>> master
 end
