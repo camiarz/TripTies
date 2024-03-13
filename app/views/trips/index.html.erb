@@ -1,20 +1,21 @@
 <h2><strong>My trips</strong></h2>
 
-  <div class="trips-container">
 
-    <div class="trips">
-      <% @trips.each do |trip| %>
-        <div class="trip">
-          <div class="trip-details">
-            <div class="trip-destination"><%= trip.destination %></div>
-            <div class="trip-arrival"><%= trip.arrival %></div>
-            <div class="trip-departure"><%= trip.departure %></div>
+
+<% @trips.each do |trip| %>
+  <div class="container" style= "justify-content: center;">
+      <div class="card mb-3 p-2" style="width: 20rem;">
+
+          <div class="trip-destination"><%= trip.destination %></div>
+          <div class="trip-arrival"><%= trip.arrival %></div>
+          <div class="trip-departure"><%= trip.departure %></div>
+
           <div class= "buttons-my-trips">
-          <%# <%= link_to "Match Buddies", traveler_path, class: "btn btn-secondary" %>
-            <%= button_to "Delete", @trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <%# <%= link_to "Match Buddies", traveler_path, class: "btn btn-secondary" %>
+            <%= link_to "Delete", @trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
             <%= link_to "✏️", edit_trip_path(trip) %>
           </div>
-        </div>
-      <% end %>
+
+      </div>
     </div>
-  </div>
+<% end %>
