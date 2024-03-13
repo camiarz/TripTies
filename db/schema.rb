@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_074634) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_064659) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_074634) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "user1_id", null: false
+    t.bigint "user2_id", null: false
+    t.boolean "confirmed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user1_id"], name: "index_matches_on_user1_id"
+    t.index ["user2_id"], name: "index_matches_on_user2_id"
   end
 
   create_table "trip_interests", force: :cascade do |t|
@@ -84,6 +94,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_074634) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "matches", "users", column: "user1_id"
+  add_foreign_key "matches", "users", column: "user2_id"
   add_foreign_key "trip_interests", "interests"
   add_foreign_key "trip_interests", "trips"
   add_foreign_key "trips", "users"
