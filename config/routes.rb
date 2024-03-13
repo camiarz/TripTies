@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     resources :matches
   end 
   resources :users
+<<<<<<< HEAD
+  
+  resources :trips, only: [:destroy]
+=======
 
+>>>>>>> master
 end

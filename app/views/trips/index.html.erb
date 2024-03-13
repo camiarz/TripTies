@@ -10,9 +10,14 @@
           <div class="trip-destination"><strong>Destination:</strong> <%= trip.destination %></div>
           <strong>Trip Duration:</strong><div class="trip-arrival"><%= trip.arrival %></div>
           <div class="trip-departure"><%= trip.departure %></div>
+           <div class="interest"><% trip.interests.each do |interest| %>
+            <%= interest.name %>
+            <% end %>
+           </div>
 
           <div class= "buttons-my-trips">
-           <%#= link_to "Match Buddies", matches_path, class: "btn btn-secondary" %>
+            <%# <%= link_to "Match Buddies", traveler_path, class: "btn btn-secondary" %>
+            <%= link_to "Delete", trips_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
             <%= link_to "✏️", edit_trip_path(trip) %>
             <%= link_to "Delete", @trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 
