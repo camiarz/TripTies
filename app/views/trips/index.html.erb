@@ -11,7 +11,7 @@
           <div class="trip-departure"><%= trip.departure %></div>
 
           <div class= "buttons-my-trips">
-           <%= link_to "Match Buddies", matches_path, class: "btn btn-secondary" %>
+           <%= link_to "Match Buddies", trip_matches_path(trip), class: "btn btn-secondary" %>
             <%= link_to "Delete", @trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
             <%= link_to "✏️", edit_trip_path(trip) %>
 
