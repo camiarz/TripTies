@@ -1,4 +1,4 @@
-  <%= simple_form_for([@trip]) do |form| %>
+  <%= simple_form_for(@trip) do |form| %>
     <%= form.input :destination, label: 'Where are you going?' %>
         <%= form.input :arrival,
           as: :string,
@@ -13,4 +13,3 @@
 
     <%= form.button :submit, 'Add trip', class: 'btn btn-primary w-100' %>
   <% end %>
-
