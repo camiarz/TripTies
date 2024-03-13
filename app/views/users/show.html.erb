@@ -1,12 +1,11 @@
 <p>Hey <%= @user.first_name %>, Welcome to TripTies✈️</p>
 
-<%= cl_image_tag current_user.photo.key, height: 200, width: 300, crop: :fill %>
+<%= cl_image_tag @user.photo.key, height: 200, width: 300, crop: :fill %>
 
 <div>
-<%= current_user.first_name %>
-<%=  current_user.last_name %>
-<%= current_user.age %>
+<%= @user.first_name %>
+<%=  @user.last_name %>
+<%= @user.age %>
+
+<%= @user.email %>
 </div>
-<%= current_user.email %>
-
-

@@ -17,7 +17,6 @@ user = User.new(
   age: Faker::Number.between(from: 18, to: 90),
   email: "camila@gmail.com",
   password: "password"
-
 )
 user.save!
 
@@ -41,6 +40,8 @@ end
   )
   trip.user = User.all.sample
   trip.save!
+end
+
 Interest.destroy_all
 
 ['Adventure', 'Ecotourism', 'Cultural Immersion', 'Cullinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|

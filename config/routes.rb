@@ -11,12 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :trips do
     resources :matches
-  end 
+  end
   resources :users
-<<<<<<< HEAD
-  
-  resources :trips, only: [:destroy]
-=======
-
->>>>>>> master
+  resources :trip_interests
 end
