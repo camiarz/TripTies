@@ -5,7 +5,10 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    # @trip = Trip.new
+    @user = current_user
+    @trips = @user.trips
+    @interests = Interest.all
   end
 
   def create
