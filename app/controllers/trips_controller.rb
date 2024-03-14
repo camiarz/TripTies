@@ -1,23 +1,25 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[edit destroy]
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
   end
 
   def new
     @trip = Trip.new
     @user = current_user
-    # @trip_interests = TripInterest.find(params[:interest_id])
     @interests = Interest.all
   end
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.id
     @trip.user = current_user
-    @interest_id = params[:trip][:interests].select{|element| element!="" }
-    # raise
+    @interest_ids = params[:trip][:interests].select{|element| element!="" }
+
     if @trip.save
-      @trip_interest = Interest.where(params[:trip_interest])
+      @interest_ids.each do |interest_id|
+        TripInterest.create(trip: @trip, interest_id: interest_id)
+      end
       redirect_to trips_path(@trip)
     else
       render :new, status: :unprocessable_entity
@@ -38,6 +40,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    TripInterest.where(trip_id: @trip.id).destroy_all
     @trip.destroy
     redirect_to trips_path(current_user), status: :see_other
   end

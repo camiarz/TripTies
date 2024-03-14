@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :trips do
     resources :matches
-  end 
+  end
   resources :users
 
   resources :trips, only: [:destroy]
 
+  resources :trip_interests
 end
