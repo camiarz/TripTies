@@ -10,18 +10,28 @@
           <div class="trip-destination"><strong>Destination:</strong> <%= trip.destination %></div>
           <strong>Trip Duration:</strong><div class="trip-arrival"><%= trip.arrival %></div>
           <div class="trip-departure"><%= trip.departure %></div>
-           <div class="interest">
-              <% trip.interests.each do |interest| %>
-                <%= interest.name %>
-              <% end %>
-           </div>
+          <div class="interest"><% trip.interests.each do |interest| %>
+            <%= interest.name %>
+            <% end %>
+          </div>
 
           <div class= "buttons-my-trips">
-           <%= link_to "Match Buddies", trip_matches_path(trip), class: "btn btn-secondary" %>
-            <%= button_to "Delete", trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-            <%= link_to "✏️", edit_trip_path(trip)%>
+
+          <div class="match-button m-1">
+          <%= link_to "Match Buddies", trip_matches_path(trip), class: "btn btn-secondary" %>
+          </div>
+
+      <div class="edit-button position-absolute top-0 end-0 "><%= link_to "✏️", edit_trip_path(trip)%></div>
+
+          <div class="delete-button m-1">
+            <%= link_to "Delete", @trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </div>
+
+
           </div>
 
       </div>
+
+
     </div>
 <% end %>

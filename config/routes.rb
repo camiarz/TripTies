@@ -13,5 +13,8 @@ Rails.application.routes.draw do
     resources :matches
   end
   resources :users
+
+  resources :trips, only: [:destroy]
+
   resources :trip_interests
 end
