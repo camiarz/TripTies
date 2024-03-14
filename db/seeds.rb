@@ -41,6 +41,8 @@ end
   )
   trip.user = User.all.sample
   trip.save!
+end
+
 Interest.destroy_all
 
 ['Adventure', 'Ecotourism', 'Cultural Immersion', 'Cullinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
