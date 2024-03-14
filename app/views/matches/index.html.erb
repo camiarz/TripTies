@@ -1,4 +1,17 @@
-<% @trip_matches.each do |trip| %>
-  <%= trip.user.fullname %>
+  <h2><%= @user1_trip.destination %></h2>
 
+ <% @trip_matches.each do |trip| %>
+ <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+  <p><%= trip.user.fullname %></p>
+  <p>Age - <%= trip.user.age %></p>
+  <p></p>
+  <%# button_to matches_path(trip: trip, user: trip.user), data: { "turbo_method": :post }, method: :post %>
+
+  <%= link_to "accept", matches_path(trip: trip, user_selected: trip.user), class: "btn btn-success", data: { "turbo_method": :post }, method: :post %>
+    <%= link_to "reject", matches_path(trip: trip, user_selected: trip.user),  class: "btn btn-danger", data: { "turbo_method": :post }, method: :post %>
+
+    </div>
+  </div>
 <% end %>

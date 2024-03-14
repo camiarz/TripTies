@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :trips do
-    resources :matches
+    resources :matches, except: [:create]
   end
+
+  resources :matches, only: [:create]
+
   resources :users
 
   resources :trips, only: [:destroy]

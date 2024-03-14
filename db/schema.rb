@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_13_064659) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_14_080141) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_064659) do
   create_table "matches", force: :cascade do |t|
     t.bigint "user1_id", null: false
     t.bigint "user2_id", null: false
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user1_id"], name: "index_matches_on_user1_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_064659) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
