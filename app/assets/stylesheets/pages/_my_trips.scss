@@ -12,3 +12,43 @@
   text-align: center;
   padding:20px;
 }
+
+.container-add-trip{
+  background-color: #fff;
+	border-radius: 4px;
+	max-width: 400px;
+	margin: 10% auto;
+	height: 600px;
+	position: relative;
+	padding: 34px;
+	color: #444;
+	cursor: pointer;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		background-color: #ccc;
+		left: 20px;
+		right: 20px;
+		bottom: 0;
+		top: 50%;
+		z-index: -1;
+		box-shadow: 0 0 40px lighten(#000, 60%);
+		transition: box-shadow .2s ease-in-out;
+	}
+	&.level-3 {
+		&:hover {
+			&:before {
+				box-shadow: 0 0 80px lighten(#000, 60%);
+			}
+		}
+	}
+
+	}
+  a{
+    text-decoration: none;
+  }
+
+  .add-trip-title{
+    text-align: center;
+  }
