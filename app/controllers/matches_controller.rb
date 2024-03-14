@@ -33,17 +33,10 @@ def index
                       .excluding(current_user.trips)
 end
 
-@match = Match.new
-
-
-
-
-
-
 private
 
-def set_trip
-  @trip = Trip.find(params[:trip_id])
-end
+    def set_trip
+      @trip = Trip.find(params[:trip_id])
+    end
 
 end

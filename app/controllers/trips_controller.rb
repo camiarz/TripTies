@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[edit destroy]
   def index
-    @trips = current_user.trips
+    # @trips = current_user.trips
+    @trips = Trip.includes(:interest).where(user: current_user)
   end
 
   def new
@@ -11,8 +12,6 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
-    @trip.id
     @trip.user = current_user
     @interest_ids = params[:trip][:interests].select{|element| element!="" }
 
