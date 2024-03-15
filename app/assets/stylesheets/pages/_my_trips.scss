@@ -1,54 +1,53 @@
+// body{
+//   background-image: url("https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+//   background-size: cover;
+//   background-repeat: no repeat;
+//   background-attachment: fixed;
+
+
+// }
+
 .card{
+  background-color: #CFE7E5;
   justify-content: center;
   margin:15px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 
 .buttons-my-trips{
   padding:15px;
   display: flex;
+
 }
+a:link{
+  color:antiquewhite;
+}
+.match-button{
+  background-color: #213638;
+  border-radius: 15px;
+  padding:8px;
+  margin:5px;
+  text-align: center;
+}
+
+.cancel-button{
+  background-color: rgb(234, 81, 81);
+  border-radius: 15px;
+  padding:8px;
+  margin:5px;
+  text-align: center;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
 .title h2{
   text-align: center;
   padding:20px;
+  margin-top: 10px;
 }
 
-.container-add-trip{
-  background-color: #fff;
-	border-radius: 4px;
-	max-width: 400px;
-	margin: 10% auto;
-	height: 600px;
-	position: relative;
-	padding: 34px;
-	color: #444;
-	cursor: pointer;
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
-		background-color: #ccc;
-		left: 20px;
-		right: 20px;
-		bottom: 0;
-		top: 50%;
-		z-index: -1;
-		box-shadow: 0 0 40px lighten(#000, 60%);
-		transition: box-shadow .2s ease-in-out;
-	}
-	&.level-3 {
-		&:hover {
-			&:before {
-				box-shadow: 0 0 80px lighten(#000, 60%);
-			}
-		}
-	}
-
-	}
   a{
     text-decoration: none;
-  }
-
-  .add-trip-title{
-    text-align: center;
   }
