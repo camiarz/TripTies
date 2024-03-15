@@ -10,10 +10,10 @@ def create
   if existing_match
     flash[:notice] = "You have a match"
     existing_match.update(confirmed: true)
-    #CHATROOOOOOM
   else
     match = Match.new(user1_id: params[:user_selected], user2_id: current_user.id, confirmed: false)
     match.save
+    Chatroom.create(match: match)
   end
 
   redirect_to trip_matches_path(@trip)
@@ -28,6 +28,11 @@ def index
                       .where(destination: @user1_trip.destination)
                       .where.not(user: users_already_matched)
                       .excluding(current_user.trips)
+end
+
+def my_matches
+  @matches = Match.where(user1: current_user).or(Match.where(user2: current_user))
+  @my_matches = @matches.where(confirmed: true)
 end
 
 private
