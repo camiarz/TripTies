@@ -1,10 +1,14 @@
   <%= simple_form_for(@trip) do |form| %>
+  
     <%= form.input :destination, label: 'Where are you going?' %>
     <%= form.input :arrival,
+
           as: :string,
           label: 'When are you arriving?',
           input_html: { data: { controller: "datepicker" } } %>
+
     <%= form.input :departure,
+
           as: :string,
           label: 'When are you leaving?',
           input_html: { data: { controller: "datepicker" } } %>
@@ -13,3 +17,16 @@
     <%= form.button :submit, 'Add trip' %>
     </div>
   <% end %>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="add_trips-page">
+  <!-- Your home page content goes here -->
+</body>
+</html>
