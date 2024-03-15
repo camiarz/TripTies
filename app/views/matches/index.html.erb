@@ -4,7 +4,7 @@
  <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-  <p><%= trip.user.fullname %></p>
+  <p><%= trip.user.fullname %> - <%= trip.user.id %></p>
   <p>Age - <%= trip.user.age %></p>
   <p></p>
   <%# button_to matches_path(trip: trip, user: trip.user), data: { "turbo_method": :post }, method: :post %>

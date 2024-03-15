@@ -13,11 +13,16 @@ Rails.application.routes.draw do
     resources :matches, except: [:create]
   end
 
-  resources :matches, only: [:create]
+  resources :matches, only: [:create] do
+    resources :chatrooms, only: :show
+  end
+  
+  get '/my_matches', to: 'matches#my_matches', as: 'my_matches'
 
   resources :users
 
   resources :trips, only: [:destroy]
 
   resources :trip_interests
+
 end
