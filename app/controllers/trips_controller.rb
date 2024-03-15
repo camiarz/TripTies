@@ -1,17 +1,16 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[edit destroy]
   def index
-    # @trips = current_user.trips
-    @trips = Trip.includes(:interest).where(user: current_user)
+    @trips = Trip.where(user: current_user)
   end
 
   def new
     @trip = Trip.new
-    @user = current_user
     @interests = Interest.all
   end
 
   def create
+    @trip = Trip.new(trip_params)
     @trip.user = current_user
     @interest_ids = params[:trip][:interests].select{|element| element!="" }
 
@@ -27,6 +26,12 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    @interests = Interest.all
+    interest_trips = TripInterest.where(trip: @trip)
+    @checked_interests = []
+    interest_trips.each do |interest_trip|
+      @checked_interests << Interest.where(id: interest_trip.interest_id)
+    end
   end
 
   def update

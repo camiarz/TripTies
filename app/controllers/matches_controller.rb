@@ -21,9 +21,6 @@ end
 
 def index
   @user1_trip = Trip.find(params[:trip_id])
-  # @trip_matches = Trip.includes(:user)
-  #                     .where(destination: @user1_trip.destination)
-  #                     .excluding(current_user.trips)
   @match = Match.new
   users_already_matched = Match.where(user2: current_user).pluck(:user1_id)
   users_already_matched += Match.where(user1: current_user, confirmed: true).pluck(:user2_id)
