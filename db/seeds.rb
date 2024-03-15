@@ -8,8 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'faker'
+
 Trip.destroy_all
+Match.destroy_all
 User.destroy_all
+
 
 user = User.new(
   first_name: "Camila",
@@ -24,7 +27,7 @@ user.save!
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    age: Faker::Number.between(from: 18, to: 90),
+    age: Faker::Number.between(from: 18, to: 50),
     email: Faker::Internet.email,
     password: "password1"
 

@@ -53,7 +53,7 @@ export default class extends Controller {
         el.classList.remove('moving');
         tinderContainer.classList.remove('tinder_love');
         tinderContainer.classList.remove('tinder_nope');
-
+                
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
@@ -79,7 +79,7 @@ export default class extends Controller {
               color: "#716add",
               backdrop: `rgba(0,0,123,0.4) left top no-repeat`
             });
-            // add code to request here
+            // add code to submit match here
           } else if ( event.deltaX < -200) {
             // reject
             console.log('left');
