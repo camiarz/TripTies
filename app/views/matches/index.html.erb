@@ -1,17 +1,24 @@
-  <h2><%= @user1_trip.destination %></h2>
-
- <% @trip_matches.each do |trip| %>
- <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-  <p><%= trip.user.fullname %> - <%= trip.user.id %></p>
-  <p>Age - <%= trip.user.age %></p>
-  <p></p>
-  <%# button_to matches_path(trip: trip, user: trip.user), data: { "turbo_method": :post }, method: :post %>
-
-  <%= link_to "accept", matches_path(trip: trip, user_selected: trip.user), class: "btn btn-success", data: { "turbo_method": :post }, method: :post %>
-    <%= link_to "reject", "#",  class: "btn btn-danger", data: { "turbo_method": :post }, method: :post %>
-
-    </div>
+<div class="tinder" data-controller="swipe" data-swipe-target="container">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-heart"></i>
   </div>
-<% end %>
+
+  <div class="tinder--cards">
+    <% @trip_matches.each do |trip| %>
+
+      <div class="tinder--card" data-swipe-target="card" style="background-image: url('https://source.unsplash.com/category/faces/500x500');">
+        <div class="">
+          <h2><%= trip.user.fullname %></h2>
+          <p>Age: <%= trip.user.age %></p>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="tinder--buttons">
+    <button data-swipe-target="nope"><i class="fa fa-remove"></i></button>
+    <button data-swipe-target="love"><i class="fa fa-heart"></i></button>
+  </div>
+</div>

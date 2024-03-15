@@ -1,9 +1,12 @@
-<h2>Sign up</h2>
+
+<div class="signup-page">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs1">
+<h2>Sign up</h2>
+  <div class="signup-form">
     <%= f.input :first_name%>
     <%= f.input :last_name%>
      <%= f.input :age%>
@@ -24,7 +27,23 @@
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
+  </div>
 <% end %>
 
 
 <%= render "devise/shared/links" %>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sign-page">
+  <!-- Your home page content goes here -->
+</body>
+</html>

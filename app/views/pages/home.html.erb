@@ -1,3 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+  <!-- Your home page content goes here -->
+</body>
+</html>
 
+<div class="home-page-title position-absolute bottom-0 start-0 ">
+<h1>Explore More Connect Better</h1>
+</div>
+<% if user_signed_in? %>
+  <%= link_to trips_path do %>
+    <div class="get-started position-absolute bottom-0 start-0">
+      Get Started
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to new_user_registration_path do %>
+    <div class="get-started position-absolute bottom-0 start-0">
+      Get Started
+    </div>
+  <% end %>
+<% end %>
