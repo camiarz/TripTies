@@ -1,0 +1,10 @@
+<h1>My Matches</h1>
+<% @my_matches.each do |match| %>
+  <p>match id:<%= match.id %></p>
+  <% if current_user == match.user1 %>
+    <p><%= match.user2.fullname %></p>
+  <% else %>
+    <p><%= match.user1.fullname %></p>
+  <% end %>
+  <%= link_to 'Chat', match_chatroom_path(match, match.chatroom) %>
+<% end %>

@@ -10,11 +10,19 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :trips do
-    resources :matches
+    resources :matches, except: [:create]
   end
+
+  resources :matches, only: [:create] do
+    resources :chatrooms, only: :show
+  end
+  
+  get '/my_matches', to: 'matches#my_matches', as: 'my_matches'
+
   resources :users
 
   resources :trips, only: [:destroy]
 
   resources :trip_interests
+
 end

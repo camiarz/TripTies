@@ -24,8 +24,8 @@
 
       <div class="edit-button position-absolute top-0 end-0 "><%= link_to "✏️", edit_trip_path(trip)%></div>
 
-          <div class="cancel-button">
-            <%= link_to "Cancel",@trip, method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="delete-button m-1">
+            <%= button_to "Delete", trip, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
           </div>
 
 
