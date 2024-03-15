@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get '/my_matches', to: 'matches#my_matches', as: 'my_matches'
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
 
