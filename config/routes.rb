@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resources :trips, only: [:destroy]
 
   resources :trip_interests
+
+  resources :chatrooms, only: :show
 end
