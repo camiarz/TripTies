@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+// .footer{
+//   position:fixed;
+//   bottom:0;
+//   left:0;
+//   width:100%;
+//   height: 90px;
+//   background-color: #D0DAEE;
+// }
+
+.home-page {
+  background-image: url("https://images.pexels.com/photos/10710542/pexels-photo-10710542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-repeat: no repeat;
+  background-attachment: fixed;
+ 
+}
+
+.get-started{
+  background-color: #079fadd4;
+  border-radius: 15px;
+  padding:20px;
+  margin:100px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+a{
+color: azure;
+}
+
+.home-page-title{
+  color: azure;
+  padding-bottom: 200px;
+
+}
+.home-page-title h1{
+font-size: 3rem;
+padding-left: 20px;
+
+}
