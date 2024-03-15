@@ -56,6 +56,8 @@
 }
 
 .tinder--card {
+  background-position: center;
+  background-size: cover;
   display: inline-block;
   width: 90vw;
   max-width: 400px;
@@ -79,7 +81,7 @@
   cursor: grabbing;
 }
 
-.tinder--card img {
+.card img {
   max-width: 100%;
   pointer-events: none;
 }
