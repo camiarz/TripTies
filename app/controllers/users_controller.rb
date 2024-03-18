@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit]
   def show
+    @joined = @user.created_at.strftime('%m/%d/%Y')
   end
 
   def edit

@@ -11,19 +11,20 @@
 </body>
 </html>
 
-<div class="home-page-title position-absolute bottom-0 start-0 ">
-<h1>Explore More Connect Better</h1>
+<div class="home-page-title">
+  <h1>Explore More Connect Better</h1>
 </div>
-<% if user_signed_in? %>
-  <%= link_to trips_path do %>
-    <div class="get-started position-absolute bottom-0 start-0">
-      Get Started
-    </div>
-  <% end %>
-<% else %>
+
+<div class="home-buttons">
   <%= link_to new_user_registration_path do %>
-    <div class="get-started position-absolute bottom-0 start-0">
+    <div class="get-started">
       Get Started
     </div>
   <% end %>
-<% end %>
+
+  <%= link_to new_user_session_path do %>
+    <div class="get-started">
+      Login
+    </div>
+  <% end %>
+</div>
