@@ -1,8 +1,8 @@
 .footer {
   position: fixed;
   bottom: 0;
-  height: 10vh;
-  background-color: white;
+  height: 5vh;
+  background-color: black;
   width: 100%;
   border-radius: 25px 25px 0 0;
   display: flex;
@@ -12,9 +12,15 @@
 
 .footer-icons {
   a {
-    color: blue;
+    color: #b7c9d7;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+}
+
+.footer .container.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create a grid layout with 4 columns */
+  gap: 10px; /* Optional: Add gap between grid items */
 }
