@@ -1,5 +1,10 @@
 <h1>My Matches</h1>
+
 <% @my_matches.each do |match| %>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src = match.user2.photo.key alt="Card image cap">
+  <div class="card-body">
   <p>match id:<%= match.id %></p>
   <% if current_user == match.user1 %>
     <p><%= match.user2.fullname %></p>
@@ -8,3 +13,5 @@
   <% end %>
   <%= link_to 'Chat', match_chatroom_path(match, match.chatroom) %>
 <% end %>
+  </div>
+</div>
