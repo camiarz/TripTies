@@ -1,11 +1,22 @@
-<p>Hey <%= @user.first_name %>, Welcome to TripTies✈️</p>
 
-<%= cl_image_tag @user.photo.key, height: 200, width: 300, crop: :fill %>
+<div class="profile_container mt-4 mb-4 p-3 d-flex justify-content-center">
+   <div class="profile_card p-4">
+    <div class="profile_name d-flex flex-column justify-content-center align-items-center">Welcome to TripTies</div>
+     <div class="d-flex flex-column justify-content-center align-items-center">
+        <%= cl_image_tag @user.photo.key, height: 150, width: 150, radius:"max", background:"#efefef"%>
+      <span class="profile_name mt-3"><%= @user.fullname.capitalize %></span>
+      <span class="idd"><%= @user.email %></span>
+      <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+        <span class="idd1"><%= @user.age %> years old</span>
+      </div>
+      <div class=" d-flex mt-2">
+        <button class="profile_btn1 btn-dark">Edit Profile</button>
 
-<div>
-<%= @user.first_name %>
-<%=  @user.last_name %>
-<%= @user.age %>
-
-<%= @user.email %>
+        <%= button_to 'Edit', edit_user_path(@user), class: "btn1 btn-dark" %>
+      </div>
+      <div class=" px-2 rounded mt-4 date ">
+        <span class="join"> Joined <%=@joined%></span>
+      </div>
+    </div>
+  </div>
 </div>
