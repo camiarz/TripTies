@@ -4,6 +4,9 @@ class TripsController < ApplicationController
     @trips = Trip.where(user: current_user)
   end
 
+  def show
+  end
+
   def new
     @trip = Trip.new
     @interests = Interest.all
