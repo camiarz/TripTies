@@ -27,7 +27,7 @@ export default class extends Controller {
     }
 
     initCards();
-
+    //const initCards = (card, index) => {
     allCards.forEach(function (el) {
       var hammertime = new Hammer(el);
 
@@ -53,7 +53,7 @@ export default class extends Controller {
         el.classList.remove('moving');
         tinderContainer.classList.remove('tinder_love');
         tinderContainer.classList.remove('tinder_nope');
-                
+
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
