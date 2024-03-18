@@ -63,6 +63,17 @@ user = User.create!(
   email: "camila@gmail.com",
   password: "password"
 )
+user.save!
+
+user = User.new(
+  first_name: "Ougesh",
+  last_name: "Sarabadu",
+  age: Faker::Number.between(from: 18, to: 90),
+  email: "ougesh@gmail.com",
+  password: "password"
+)
+user.save!
+
 20.times do
   User.create!(
     first_name: Faker::Name.first_name,
