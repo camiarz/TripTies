@@ -12,6 +12,7 @@
       <div class="trip-arrival"><strong>Trip Duration:</strong><%= trip.arrival %></div>
       <div class="trip-departure"><%= trip.departure %></div>
       </div>
+       </div>
       <div class="my-trips-buttons">
       <div class="match-button ">
         <%= link_to "Match Buddies", trip_matches_path(trip) %>
@@ -20,8 +21,8 @@
   <%= button_to "Cancel", trip, method: :delete, data: { confirm: "Are you sure?" }, class: "button-cancel" %>
       </div>
       </div>
-     </div>
-    </div>
       <div class="edit-button position-absolute top-0 end-0 "><%= link_to "✏️", edit_trip_path(trip)%></div>
+
+    </div>
   <% end %>
 </div>
