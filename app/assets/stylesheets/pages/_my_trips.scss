@@ -10,38 +10,48 @@
 
 
 .card{
-  background-color:#89b88f;
   justify-content: center;
   margin:15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height:300px;
+
+}
+.details{
+  font-size: 25px;
+
 }
 
-
-.buttons-my-trips{
-  padding:15px;
+.my-trips-buttons{
   display: flex;
+}
 
-}
-a:link{
-  color:rgb(0, 0, 0);
-}
+
+
+
+
+// a:link{
+//   color:rgb(0, 0, 0);
+// }
 .match-button{
-  background-color: #6D9773;
+  background-color:#079fadd4;
   border-radius: 15px;
   padding:8px;
   margin:5px;
   text-align: center;
+  margin-top: 100px;
+  width: 5cm;
 }
 
-.cancel-button{
-  background-color: rgb(234, 81, 81);
-  border-radius: 15px;
-  padding:8px;
-  margin:5px;
-  text-align: center;
-  color: antiquewhite;
-  text-decoration: none;
+.button-cancel{
+width:5cm;
+border-radius: 15px;
+background-color: rgb(232, 226, 226);
+color: rgb(4, 4, 4);
+border: none;
+padding: 8px;
+text-decoration: none;
+margin-top: 100px;
 }
 
 .title h2{
@@ -53,6 +63,7 @@ a:link{
 
   a{
     text-decoration: none;
+
   }
 
   .my_trips-page{
