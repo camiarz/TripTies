@@ -27,7 +27,7 @@ export default class extends Controller {
     }
 
     initCards();
-
+    //const initCards = (card, index) => {
     allCards.forEach(function (el) {
       var hammertime = new Hammer(el);
 

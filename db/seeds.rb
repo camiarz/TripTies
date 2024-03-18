@@ -13,7 +13,6 @@ Trip.destroy_all
 Match.destroy_all
 User.destroy_all
 
-
 user = User.new(
   first_name: "Camila",
   last_name: "Ruiz",
@@ -23,6 +22,8 @@ user = User.new(
 )
 user.save!
 
+countries = ['Greece', 'Los Angeles', 'Thailand', 'Tokyo', 'Dubai', 'Peru']
+
 20.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -30,22 +31,23 @@ user.save!
     age: Faker::Number.between(from: 18, to: 50),
     email: Faker::Internet.email,
     password: "password1"
-
   )
   user.save!
 end
 
 1000.times do
+  destination = countries.sample
   trip = Trip.new(
-    destination: Faker::Address.country,
+    destination: destination,
     arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
     departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now)
   )
   trip.user = User.all.sample
   trip.save!
 end
+
 Interest.destroy_all
 
-['Adventure', 'Ecotourism', 'Cultural Immersion', 'Cullinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
+['Adventure', 'Ecotourism', 'Cultural Immersion', 'Culinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
   Interest.create(name: name)
 end
