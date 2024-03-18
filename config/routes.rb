@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/my_matches', to: 'matches#my_matches', as: 'my_matches'
+  post '/trips/:trip_id/swipe_matches', to: 'matches#swipe_matches', as: 'swipe_matches'
 
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create

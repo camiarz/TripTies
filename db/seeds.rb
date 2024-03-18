@@ -23,6 +23,15 @@ user = User.new(
 )
 user.save!
 
+user = User.new(
+  first_name: "Ougesh",
+  last_name: "Sarabadu",
+  age: Faker::Number.between(from: 18, to: 90),
+  email: "ougesh@gmail.com",
+  password: "password"
+)
+user.save!
+
 20.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -44,6 +53,7 @@ end
   trip.user = User.all.sample
   trip.save!
 end
+
 Interest.destroy_all
 
 ['Adventure', 'Ecotourism', 'Cultural Immersion', 'Cullinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
