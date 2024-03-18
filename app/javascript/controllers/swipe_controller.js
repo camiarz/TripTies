@@ -73,12 +73,20 @@ export default class extends Controller {
             // accept
             console.log('right');
             Swal.fire({
-              title: "YOU SWIPED RIGHT",
+              title: "It's a match 🥳",
               width: 600,
               padding: "3em",
               color: "#716add",
               backdrop: `rgba(0,0,123,0.4) left top no-repeat`
             });
+            /*Rails.ajax({ //cannot call method createe in match controller
+              url: "/matches",
+              type: "post",
+              data: "",
+              success: function(data) {},
+              error: function(data) {}
+            }) */
+
             // add code to submit match here
           } else if ( event.deltaX < -200) {
             // reject
