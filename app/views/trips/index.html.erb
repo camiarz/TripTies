@@ -6,6 +6,7 @@
 
 <div class="container" >
   <% @trips.each do |trip| %>
+
    <div class="card" style="background-image: url('<%= trip.image_url %>'); background-size: cover; background-position: center;">
     <div class="details">
       <div class="trip-destination"><i class="fa-solid fa-plane-departure"></i><%= trip.destination %>
@@ -17,6 +18,10 @@
       </div>
       <div class="trip-arrival"><i class="fa-solid fa-calendar-days"></i><%= trip.arrival.strftime("%d %B") %> - <%= trip.departure.strftime("%d %B") %></div>
     </div>
+        <div class="interest"><% trip.interests.each do |interest| %>
+            <%= interest.name %>
+            <% end %>
+          </div>
     <div class="my-trips-buttons">
       <div class="match-button ">
         <%= link_to "Match", trip_matches_path(trip) %>
