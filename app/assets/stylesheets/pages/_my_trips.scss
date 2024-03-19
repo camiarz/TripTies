@@ -7,28 +7,22 @@
 
 // }
 
-
-
 .card{
-  justify-content: center;
   margin:15px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.851);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   height:300px;
-
+  padding: 25px;
 }
-.details{
-  font-size: 25px;
 
+.details{
 }
 
 .my-trips-buttons{
   display: flex;
+  margin-top: 120px;
+  gap: 0.5rem;
 }
-
-
-
-
 
 // a:link{
 //   color:rgb(0, 0, 0);
@@ -37,23 +31,20 @@
   background-color:#079fad;
   border-radius: 15px;
   padding:8px;
-  margin:5px;
   text-align: center;
-  margin-top: 100px;
-  width: 5cm;
-  font-size: 20px;
+  width: 67%;
+
 }
 
 .button-cancel{
-width:5cm;
-border-radius: 15px;
-background-color: rgb(232, 226, 226);
-color: rgb(4, 4, 4);
-border: none;
-padding: 8px;
-text-decoration: none;
-margin-top: 100px;
-font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(232, 226, 226);
+  color: rgb(4, 4, 4);
+  border: none;
+  padding: 8px;
+  text-decoration: none;
+  width: 33%;
+  text-align: center;
 }
 
 .title h2{
@@ -70,4 +61,24 @@ font-size: 20px;
 
   .my_trips-page{
     background-color:#ffffff;
+  }
+
+  .trip-destination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  .edit-button {
+    i {
+      color: black
+    }
+  }
+
+  .trip-arrival {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }

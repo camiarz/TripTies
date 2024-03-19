@@ -56,14 +56,14 @@ require 'faker'
 Trip.destroy_all
 Match.destroy_all
 User.destroy_all
-user = User.create!(
+user1 = User.create!(
   first_name: "Camila",
   last_name: "Ruiz",
   age: Faker::Number.between(from: 18, to: 90),
   email: "camila@gmail.com",
   password: "password"
 )
-user.save!
+user1.save!
 
 user = User.new(
   first_name: "Ougesh",
@@ -85,8 +85,8 @@ user.save!
 end
 
   Trip.create!(
-    user: user,
-    destination: "greece",
+    user: user1,
+    destination: "Greece",
     arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
     departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
     image_url: "https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -94,8 +94,8 @@ end
 
 
     trip = Trip.create!(
-      user: user,
-      destination: "new york",
+      user: user1,
+      destination: "New York",
       arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
       image_url: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -105,7 +105,7 @@ end
 
     trip = Trip.create!(
       user: user,
-      destination: "thailand",
+      destination: "Thailand",
       arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
       image_url: "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -115,7 +115,7 @@ end
 
     trip = Trip.create!(
       user: user,
-      destination: "dubai",
+      destination: "Dubai",
       arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
       image_url: "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -124,8 +124,8 @@ end
 
 
     trip = Trip.create!(
-      user: user,
-      destination: "tokyo",
+      user: user1,
+      destination: "Tokyo",
       arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
       image_url: "https://images.pexels.com/photos/161309/traditional-and-technology-zojoji-temple-tokyo-culture-161309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
