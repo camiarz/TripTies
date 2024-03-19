@@ -12,10 +12,9 @@
   </head>
 
   <body>
+  
     <%= render 'shared/navbar' %>
-    <div class="mt-5">
       <%= yield %>
-    </div>
       <%= render 'shared/footer' unless request.fullpath == '/' || request.fullpath.include?('users') %>
   </body>
 </html>

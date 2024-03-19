@@ -1,11 +1,20 @@
-
-<div class="container-add-trip border mt-5 p-2 ">
-
-
-<div class="form-add-trip ">
-<div class="add-trip-title mb-5">
-  <h1><strong>Add a new trip</strong></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1521165582142-eaf4bd77b3f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
 </div>
-<%= render 'form', trip: @trip%>
-</div>
+
+<div>
+
+  <div class='row justify-content-center'>
+    <div class='col'>
+    <div class="card-add-trip border p-2">
+      <div class="form-add-trip ">
+        <div class="add-trip-title mb-5">
+          <h1><strong>Add a new trip</strong></h1>
+        </div>
+      <%= render 'form', trip: @trip%>
+
+      </div>
+      </div>
+    </div>
+  </div>
+
 </div>

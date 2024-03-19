@@ -1,24 +1,26 @@
 <div class="tinder--cards">
     <% trip_matches.each do |trip| %>
 
-      <div class="tinder--card" data-swipe-target="card" style="background-image: url('https://source.unsplash.com/category/faces/500x500');">
-        <div class="">
-          <h2><%= trip.user.fullname %></h2>
-          <p>Age: <%= trip.user.age %></p>
+      <div class="tinder--card" data-swipe-target="card" style="background-image: url('<%= cl_image_path trip.user.photo.key %>');">
+        <div class="card-content">
+          <div class="user--info">
+              <h2><%= trip.user.fullname %></h2>
+              <p>Age: <%= trip.user.age %></p>
+            </div>
+            <div class="tinder--buttons">
+              <%= link_to "#", data: { "turbo_method": :post }, method: :post do %>
+                <button data-swipe-target="nope"><i class="fa fa-remove"></i></button>
+              <% end %>
+              <%= link_to matches_path(trip: trip, user_selected: trip.user), data: { "turbo_method": :post, swipe_target: 'buttonLove' }, method: :post do %>
+                <button data-swipe-target="love"><i class="fa fa-heart"></i></button>
+              <% end %>
+            </div>
+            <%= simple_form_for :match, html: { data: { swipe_target: 'form' } }, url: swipe_matches_path(trip) do |f| %>
+              <%= f.input :user1_id, input_html: { value: trip.user.id }, as: :hidden %>
+              <%= f.input :user2_id, input_html: { value: current_user.id }, as: :hidden %>
+              <%= f.input :confirmed, value: false, as: :hidden %>
+            <% end %>
         </div>
-        <div class="tinder--buttons">
-          <%= link_to "#", data: { "turbo_method": :post }, method: :post do %>
-            <button data-swipe-target="nope"><i class="fa fa-remove"></i></button>
-          <% end %>
-          <%= link_to matches_path(trip: trip, user_selected: trip.user), data: { "turbo_method": :post, swipe_target: 'buttonLove' }, method: :post do %>
-            <button data-swipe-target="love"><i class="fa fa-heart"></i></button>
-          <% end %>
         </div>
-        <%= simple_form_for :match, html: { data: { swipe_target: 'form' } }, url: swipe_matches_path(trip) do |f| %>
-          <%= f.input :user1_id, input_html: { value: trip.user.id }, as: :hidden %>
-          <%= f.input :user2_id, input_html: { value: current_user.id }, as: :hidden %>
-          <%= f.input :confirmed, value: false, as: :hidden %>
-        <% end %>
-      </div>
     <% end %>
   </div>
