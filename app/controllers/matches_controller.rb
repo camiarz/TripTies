@@ -11,36 +11,29 @@ class MatchesController < ApplicationController
     if existing_match
       flash[:notice] = "You have a match"
       existing_match.update(confirmed: true)
+      match = existing_match
     else
       match = Match.new(user1_id: params[:user_selected], user2_id: current_user.id, confirmed: false)
       match.save
-      Chatroom.create(match: match)
     end
+    Chatroom.create(match: match) if match.confirmed
     redirect_to trip_matches_path(@trip)
   end
 
   def swipe_matches
     @trip = Trip.find(params[:trip_id])
-    existing_match = Match.find_by(user1_id: params["match[user1_id]"], user2_id: params["match[user2_id]"])
+    existing_match = Match.find_by(user1_id: current_user.id, user2_id: params["match[user1_id]"])
     if existing_match
       flash[:notice] = "You have a match"
       existing_match.update(confirmed: true)
+      match = existing_match
     else
       match = Match.new(user1_id: params["match[user1_id]"], user2_id: params["match[user2_id]"])
       match.save
-      Chatroom.create(match: match)
     end
-
-    @match = Match.new
-    users_already_matched = Match.where(user2: current_user).pluck(:user1_id)
-    users_already_matched += Match.where(user1: current_user, confirmed: true).pluck(:user2_id)
-    @trip_matches = Trip.joins(:user)
-                        .where(destination: @trip.destination)
-                        .where.not(user: users_already_matched)
-                        .excluding(current_user.trips)
-
+    Chatroom.create(match: match) if match.confirmed
     respond_to do |format|
-      msg = { status: 'Match sent', match_id: @match.id }
+      msg = { status: 'Match sent', match_id: match.id }
       format.json { render json: msg }
     end
   end
