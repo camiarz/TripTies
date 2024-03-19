@@ -6,12 +6,20 @@
 
 <div class="container" >
   <% @trips.each do |trip| %>
+<<<<<<< HEAD
   <div class="card mb-3 p-2" style="position: relative; justify-content: center; overflow: hidden; background-image: url('<%= trip.image_url %>'); background-size: cover; background-position: center;">
+=======
+   <div class="card" style="background-image: url('<%= trip.image_url %>'); background-size: cover; background-position: center;">
+>>>>>>> master
     <div class="details">
-      <div class="trip-destination"><strong>Destination:</strong> <%= trip.destination %>
-      <div class="trip-arrival"><strong>Trip Duration:</strong><%= trip.arrival %></div>
-      <div class="trip-departure"><%= trip.departure %></div>
+      <div class="trip-destination"><i class="fa-solid fa-plane-departure"></i><%= trip.destination %>
+        <div class="edit-button">
+          <%= link_to edit_trip_path(trip) do %>
+            <i class="fa-solid fa-pen-to-square"></i>
+          <% end %>
+        </div>
       </div>
+<<<<<<< HEAD
       </div>
       <div class="my-trips-buttons">
       <div class="match-button ">
@@ -23,6 +31,16 @@
       </div>
       <div class="edit-button position-absolute top-0 end-0 "><%= link_to "✏️", edit_trip_path(trip)%></div>
 
+=======
+      <div class="trip-arrival"><i class="fa-solid fa-calendar-days"></i><%= trip.arrival.strftime("%d %B") %> - <%= trip.departure.strftime("%d %B") %></div>
+>>>>>>> master
     </div>
+    <div class="my-trips-buttons">
+      <div class="match-button ">
+        <%= link_to "Match", trip_matches_path(trip) %>
+      </div>
+      <%= link_to "Cancel", trip_path(trip), data: { "turbo-method": :delete }, class: "button-cancel" %>
+    </div>
+  </div>
   <% end %>
 </div>
