@@ -1,5 +1,5 @@
   <%= simple_form_for(@trip) do |form| %>
-  
+
     <%= form.input :destination, label: 'Where are you going?' %>
     <%= form.input :arrival,
 
@@ -13,20 +13,7 @@
           label: 'When are you leaving?',
           input_html: { data: { controller: "datepicker" } } %>
     <%= form.input :interests, collection: @interests, as: :check_boxes %>
-    <div class="add-trip-button position-absolute bottom-10 start-50 translate-middle-x mt-3">
-    <%= form.button :submit, 'Add trip' %>
+    <div class="text-center">
+      <%= form.button :submit, 'Add trip', class: "add-trip-button mt-3" %>
     </div>
   <% end %>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="add_trips-page">
-  <!-- Your home page content goes here -->
-</body>
-</html>
