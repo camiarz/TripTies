@@ -6,13 +6,13 @@
 
 <div class="container" >
   <% @trips.each do |trip| %>
-   <div class="card mb-3 p-2" style="position: relative; justify-content: center; overflow: hidden; background-image: url('<%= trip.image_url %>'); background-size: cover; background-position: center;">
+  <div class="card mb-3 p-2" style="position: relative; justify-content: center; overflow: hidden; background-image: url('<%= trip.image_url %>'); background-size: cover; background-position: center;">
     <div class="details">
       <div class="trip-destination"><strong>Destination:</strong> <%= trip.destination %>
       <div class="trip-arrival"><strong>Trip Duration:</strong><%= trip.arrival %></div>
       <div class="trip-departure"><%= trip.departure %></div>
       </div>
-       </div>
+      </div>
       <div class="my-trips-buttons">
       <div class="match-button ">
         <%= link_to "Match Buddies", trip_matches_path(trip) %>
