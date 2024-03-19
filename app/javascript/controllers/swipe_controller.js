@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 // Connects to data-controller="swipe"
 export default class extends Controller {
 
-  static targets = ['nope', 'love', 'container', 'card']
+  static targets = ['nope', 'love', 'container', 'card', 'buttonLove', 'form']
   connect() {
     console.log('swipe connected');
 
@@ -13,6 +13,7 @@ export default class extends Controller {
     var allCards = this.cardTargets;
     var nope = this.nopeTarget;
     var love = this.loveTarget;
+    var formAction = this.formTarget.action
 
     const initCards = (card, index) => {
       const newCards = document.querySelectorAll('.tinder--card:not(.removed)');
@@ -27,7 +28,7 @@ export default class extends Controller {
     }
 
     initCards();
-
+    //const initCards = (card, index) => {
     allCards.forEach(function (el) {
       var hammertime = new Hammer(el);
 
@@ -72,6 +73,11 @@ export default class extends Controller {
           if ( event.deltaX > 200) {
             // accept
             console.log('right');
+            console.log(event.target.lastElementChild);
+            let formData = new FormData(event.target.lastElementChild);
+            let plainFormData = Object.fromEntries(formData.entries());
+            let formDataJsonString = JSON.stringify(plainFormData);
+
             Swal.fire({
               title: "It's a match 🥳",
               width: 600,
@@ -79,13 +85,18 @@ export default class extends Controller {
               color: "#716add",
               backdrop: `rgba(0,0,123,0.4) left top no-repeat`
             });
-            /*Rails.ajax({ //cannot call method createe in match controller
-              url: "/matches",
-              type: "post",
-              data: "",
-              success: function(data) {},
-              error: function(data) {}
-            }) */
+            fetch(formAction, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: formDataJsonString,
+            })
+            .then(response => response.text())
+            .then((data) => {
+              // console.log(data)
+            })
 
             // add code to submit match here
           } else if ( event.deltaX < -200) {
@@ -127,5 +138,13 @@ export default class extends Controller {
 
     nope.addEventListener('click', nopeListener);
     love.addEventListener('click', loveListener);
+  }
+
+  #buildFormData(form) {
+    console.log(form)
+    const formData = new FormData(form);
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formDataJsonString = JSON.stringify(plainFormData);
+    return formDataJsonString
   }
 }

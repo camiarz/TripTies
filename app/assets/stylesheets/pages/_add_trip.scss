@@ -1,34 +1,42 @@
 
 .add-trip-title{
   text-align: center;
-
 }
 
 .form-add-trip{
   padding:100px 5px;
+
 }
 
 .container-add-trip{
-  background-color:#F0FFF0;
+  background-color:#FFFFFF;
 	border-radius: 35px;
 	max-width: 400px;
   height: 820px;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
   // opacity:.9;
   margin: 10px;
-  color:#000000;
+  color:#133C55;
+  position: absolute;
 }
 
 .add-trip-button{
-  background-color:#ACE1AF ;
+  background-color: #133C55;
   border-radius: 15px;
   padding:4px;
   text-align: center;
   width:200px;
+  color:#FFFFFF;
+  position: relative;
+
+}
+
+a:link{
+  color: #FFFFFF;
 }
 
 .add_trips-page{
-  background-color: #ACE1AF;
+  background-color: #133C55;
 }
 
 .arrive{

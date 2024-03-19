@@ -1,13 +1,16 @@
 <footer class="footer">
-  <div class="container grid-3 footer-icons">
+  <div class="container grid-4 footer-icons">
     <%= link_to new_trip_path do %>
-      <i class="fa-solid fa-plane-departure fa-2x"></i>
+     <i class="fa-solid fa-earth-americas"></i>
     <% end %>
     <%= link_to trips_path do %>
-      <i class="fa-solid fa-house fa-2x"></i>
+      <i class="fa-solid fa-house"></i>
     <% end %>
     <%= link_to my_matches_path do %>
-      <i class="fa-solid fa-comment-dots fa-2x"></i>
+     <i class="fa-regular fa-comment-dots"></i>
+    <% end %>
+    <%= link_to user_path(current_user) do %>
+      <i class="fa-solid fa-user"></i>
     <% end %>
   </div>
 </footer>
