@@ -1,18 +1,38 @@
-<h1>Edit Your Trip</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=2041&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+</div>
 
-  <%= simple_form_for(@trip) do |form| %>
+<div>
+
+  <div class='row justify-content-center'>
+    <div class='col'>
+    <div class="card-edit-trip border p-2">
+      <div class="form-edit-trip ">
+        <div class="edit-trip-title mb-5">
+          <h1><strong>Edit your trip</strong></h1>
+        </div>
+      <%= simple_form_for(@trip) do |form| %>
+
     <%= form.input :destination, label: 'Where are you going?' %>
     <%= form.input :arrival,
+
           as: :string,
           label: 'When are you arriving?',
           input_html: { data: { controller: "datepicker" } } %>
+
     <%= form.input :departure,
+
           as: :string,
           label: 'When are you leaving?',
           input_html: { data: { controller: "datepicker" } } %>
-    <%= form.input :interest_ids, collection: @interests, as: :check_boxes %>
-
-    <div class="position-absolute bottom-10 start-50 translate-middle-x mt-3">
-    <%= form.button :submit, 'Edit trip', class: 'btn btn-primary w-100' %>
+    <%= form.input :interests, collection: @interests, as: :check_boxes %>
+    <div class="text-center">
+      <%= form.button :submit, 'Edit trip', class: "edit-trip-button mt-3" %>
     </div>
   <% end %>
+
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>

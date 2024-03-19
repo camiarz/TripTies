@@ -1,5 +1,5 @@
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 5vh;
   background-color: black;
@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:10 ;
 }
 
 .footer-icons {
@@ -16,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 }
 
