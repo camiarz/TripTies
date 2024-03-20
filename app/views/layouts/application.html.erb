@@ -12,7 +12,7 @@
   </head>
 
   <body>
-  
+
     <%= render 'shared/navbar' %>
       <%= yield %>
       <%= render 'shared/footer' unless request.fullpath == '/' || request.fullpath.include?('users') %>
