@@ -1,7 +1,7 @@
 <div class="tinder--cards">
     <% trip_matches.each do |trip| %>
 
-      <div class="tinder--card" data-swipe-target="card" style="background-image: url('<%= cl_image_path trip.user.photo.key %>');">
+      <div class="tinder--card" data-swipe-target="card" style="background-image: url('<%= cl_image_path trip.user.photo.key %>')";>
         <div class="card-content">
           <div class="user--info">
               <h2><%= trip.user.fullname %></h2>
