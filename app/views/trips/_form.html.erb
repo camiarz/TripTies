@@ -12,6 +12,8 @@
           as: :string,
           label: 'When are you leaving?',
           input_html: { data: { controller: "datepicker" } } %>
+
+    <%= form.input :description, label: 'What are you planning on doing?' %>
     <%= form.input :interests, collection: @interests, as: :check_boxes %>
     <div class="text-center">
       <%= form.button :submit, 'Add trip', class: "add-trip-button mt-3" %>

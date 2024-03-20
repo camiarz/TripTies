@@ -192,7 +192,7 @@ img.chat_avatar {
 }
 
 .title{
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0.5rem;
   font-weight: 500;
   text-align: center;
@@ -202,6 +202,20 @@ img.chat_avatar {
   font-weight: 500;
   color: #34394F;
   font-size: 15px;
-  margin-top: 10px;}
+  margin-top: 10px;
+}
+.card-img-left{
+  width: 8vh;
+  height: 8vh;
+  border-radius: 50%;
+}
 
-  
+.match-card{
+  padding-top: 14px;
+  background-color: #efefef;
+  height: 12vh;
+}
+
+.fa-arrow-left{
+  color: #000;
+}
