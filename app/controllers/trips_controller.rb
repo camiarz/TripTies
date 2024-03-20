@@ -16,10 +16,9 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @interest_ids = params[:trip][:interests].select{|element| element!="" }
-
     if @trip.save
       @interest_ids.each do |interest_id|
-        TripInterest.create(trip: @trip, interest_id: interest_id)
+        TripInterest.create!(trip: @trip, interest_id: interest_id)
       end
       redirect_to trips_path(@trip)
     else
