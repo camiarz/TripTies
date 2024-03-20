@@ -1,0 +1,18 @@
+{
+  "background_color": "white",
+  "description": "TripTies is app where you can match with people traveling to the same place and during the same time.
+    Embark on your journey with confidence, knowing that you've found compatible travel buddies to share experiences with.",
+  "display": "fullscreen",
+  "name": "TripTies",
+  "icons": [
+    <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= match && match[:size] %>",
+        "type": "image/png"
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ]
+}
