@@ -47,6 +47,14 @@ class MatchesController < ApplicationController
                         .where(destination: @user1_trip.destination)
                         .where.not(user: users_already_matched)
                         .excluding(current_user.trips)
+    # @trip_matches.each do |trip|
+    #   puts "Displaying the user for a trip"
+    #   puts trip.user
+    #   p trip.user.photo.key
+    #   if trip.user.photo.key.nil?
+    #     puts "User #{trip.user.id} does not have a photo attached"
+    #   end
+    # end
   end
 
   def my_matches
