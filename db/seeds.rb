@@ -48,7 +48,8 @@ require "open-uri"
 
 Interest.destroy_all
 
-['Adventure', 'Ecotourism', 'Cultural Immersion', 'Culinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
+INTERESTS = ['Adventure', 'Ecotourism', 'Cultural Immersion', 'Culinary', 'Backpacking', 'Art and Museums', 'Festivals and Events']
+INTERESTS.each do |name|
   Interest.create(name: name)
 end
 
@@ -339,7 +340,7 @@ countries = [
       image_url: country[:image_url],
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      description: Faker::Lorem.paragraph
+      description: Faker::Lorem.paragraph,
     )
 end
 
@@ -393,8 +394,3 @@ end
       description: Faker::Lorem.paragraph
     )
 
-# Create trips for other destinations similarly
-Interest.destroy_all
-['Adventure', 'Ecotourism', 'Cultural Immersion', 'Culinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
-  Interest.create(name: name)
-end

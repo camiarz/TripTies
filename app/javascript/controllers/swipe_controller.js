@@ -73,8 +73,8 @@ export default class extends Controller {
           if ( event.deltaX > 200) {
             // accept
             console.log('right');
-            console.log(event.target.lastElementChild);
-            let formData = new FormData(event.target.lastElementChild);
+            console.log(event.target.lastElementChild.lastElementChild);
+            let formData = new FormData(event.target.lastElementChild.lastElementChild);
             let plainFormData = Object.fromEntries(formData.entries());
             let formDataJsonString = JSON.stringify(plainFormData);
 
