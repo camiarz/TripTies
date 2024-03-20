@@ -13,10 +13,14 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   height:300px;
   padding: 25px;
+  color:white;
 }
 
-.details{
-}
+// .container{
+//   background-color: #14e2824d;
+// }
+
+
 
 .my-trips-buttons{
   display: flex;
@@ -33,25 +37,32 @@
   padding:8px;
   text-align: center;
   width: 67%;
-
+  a{
+    color:white;
+  }
 }
 
 .button-cancel{
   border-radius: 15px;
   background-color: rgb(232, 226, 226);
-  color: rgb(4, 4, 4);
   border: none;
   padding: 8px;
   text-decoration: none;
   width: 33%;
   text-align: center;
+  a:link{
+    color: black;
+  }
 }
+
 
 .title h2{
   text-align: center;
   padding:20px;
   margin-top: 10px;
   font-size: 2.5rem;
+  color:black;
+  font-family:cursive;
 }
 
   a{

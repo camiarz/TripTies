@@ -16,6 +16,8 @@
   z-index:10;
   position: absolute;
   width:100%;
+  padding: 0.5rem;
+  padding-bottom: 50px;
   // height: 820px;
   // box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
   // // opacity:.9;
@@ -74,4 +76,31 @@ a:link{
   padding: 150px 0;
   position: relative;
   top:-55px;
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #e5a23ed6;
+  color: #000000;
+  border: 1px solid #e5a13e;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #cfe7e5;
+  color: rgb(4, 4, 4);
 }

@@ -12,7 +12,10 @@
           as: :string,
           label: 'When are you leaving?',
           input_html: { data: { controller: "datepicker" } } %>
-    <%= form.input :interests, collection: @interests, as: :check_boxes %>
+    <%= form.input :interests, collection: @interests,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
     <div class="text-center">
       <%= form.button :submit, 'Add trip', class: "add-trip-button mt-3" %>
     </div>

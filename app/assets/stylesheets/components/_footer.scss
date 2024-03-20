@@ -1,5 +1,5 @@
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 5vh;
   background-color: black;
@@ -25,4 +25,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Create a grid layout with 4 columns */
   gap: 10px; /* Optional: Add gap between grid items */
+}
+
+.footer-push {
+  height: 50px;
 }
