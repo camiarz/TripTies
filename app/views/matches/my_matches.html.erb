@@ -1,25 +1,27 @@
 <div class="container">
   <div class="title"><h1>My Matches</h1></div>
 
-  <% @my_matches.each do |match| %>
     <div class="chat">
-        <img class="chat_avatar" src="https://randomuser.me/api/portraits/men/11.jpg">
-      <div class="chat_info">
-        <div class="contact_name">
+  <% @my_matches.each do |match| %>
+  <%= link_to match_chatroom_path(match, match.chatroom) do%>
+      <div class="card flex-row match-card">
+        <% if current_user == match.user1 %>
+        <img class="card-img-left" src="<%= cl_image_path match.user2.photo.key%>"/>
+        <% else %>
+        <%= match.user1.fullname %>
+        <img class="card-img-left" src="<%= cl_image_path match.user1.photo.key%>"/>
+        <% end %>
+        <div class="card-body">
+          <h4 class="card-title">
           <% if current_user == match.user1 %>
           <%= match.user2.fullname %>
           <% else %>
           <%= match.user1.fullname %>
           <% end %>
-        </div>
-        <div class="contact_msg">
-
-        </div>
-      </div>
-
-        <div class="chat_new ">
-          <%= link_to 'Chat', match_chatroom_path(match, match.chatroom), class: "btn btn-success" %>
-        </div>
-    </div>
+          </h4>
+  </div>
+</div>
   <% end%>
+    <% end%>
+</div>
 </div>

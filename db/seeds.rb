@@ -53,9 +53,13 @@ Interest.destroy_all
 end
 
 require 'faker'
+Chatroom.destroy_all
 Trip.destroy_all
 Match.destroy_all
 User.destroy_all
+
+
+file0 = URI.open('https://images.unsplash.com/photo-1619895862022-09114b41f16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 user0 = User.create!(
   first_name: "Camila",
   last_name: "Ruiz",
@@ -63,8 +67,10 @@ user0 = User.create!(
   email: "camila@gmail.com",
   password: "password"
 )
+user0.photo.attach(io: file0, filename: 'photo', content_type: 'image/png')
 user0.save!
 
+file01 = URI.open('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 user01 = User.new(
   first_name: "Ougesh",
   last_name: "Sarabadu",
@@ -72,6 +78,7 @@ user01 = User.new(
   email: "ougesh@gmail.com",
   password: "password"
 )
+user01.photo.attach(io: file01, filename: 'photo', content_type: 'image/png')
 user01.save!
 
 # 20.times do
@@ -332,6 +339,7 @@ countries = [
       image_url: country[:image_url],
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
+      description: Faker::Lorem.paragraph
     )
 end
 
@@ -340,7 +348,8 @@ end
     destination: "Santorini",
     arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
     departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-    image_url: "https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    image_url: "https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    description: Faker::Lorem.paragraph
   )
 
 
@@ -349,7 +358,8 @@ end
       destination: "New York",
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      image_url: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image_url: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: Faker::Lorem.paragraph
     )
 
 
@@ -359,7 +369,8 @@ end
       destination: "Phuket",
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      image_url: "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image_url: "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: Faker::Lorem.paragraph
     )
 
 
@@ -369,7 +380,8 @@ end
       destination: "Dubai",
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      image_url: "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image_url: "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: Faker::Lorem.paragraph
     )
 
     trip = Trip.create!(
@@ -377,8 +389,10 @@ end
       destination: "Tokyo",
       arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
-      image_url: "https://images.pexels.com/photos/161309/traditional-and-technology-zojoji-temple-tokyo-culture-161309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image_url: "https://images.pexels.com/photos/161309/traditional-and-technology-zojoji-temple-tokyo-culture-161309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: Faker::Lorem.paragraph
     )
+
 # Create trips for other destinations similarly
 Interest.destroy_all
 ['Adventure', 'Ecotourism', 'Cultural Immersion', 'Culinary', 'Backpacking', 'Art and Museums', 'Festivals and Events'].each do |name|
