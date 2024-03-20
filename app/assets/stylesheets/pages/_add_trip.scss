@@ -11,7 +11,7 @@
 .card-add-trip{
   background-color:#fffffff6;
 	border-radius: 50px 50px 0 0;
-  color: #133C55;
+  color: #000000;
   margin-top: -150px;
   z-index:10;
   position: absolute;
@@ -27,7 +27,7 @@
 }
 
 .add-trip-button{
-  background-color: #55a5b2;
+  background-color: #709775;
   border-radius: 15px;
   padding:9px;
   text-align: center;
@@ -43,9 +43,9 @@ a:link{
   color: #FFFFFF;
 }
 
-.add_trips-page{
-  background-color: #133C55;
-}
+// .add_trips-page{
+//   background-color: #133C55;
+// }
 
 .arrive{
   border-radius: 20%;
@@ -93,14 +93,14 @@ a:link{
   font-size: 0.9rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  background-color: #e5a23ed6;
-  color: #000000;
-  border: 1px solid #e5a13e;
+  background-color: #dda15e;
+  color: #ffffff;
+  border: 1px solid #DDA15E;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: #cfe7e5;
+  background-color: #ffca86;
   color: rgb(4, 4, 4);
 }
