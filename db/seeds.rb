@@ -316,7 +316,7 @@ countries = [
     },
     {
       name: "Santorini",
-      image_url: "https://images.pexels.com/photos/4817608/pexels-photo-4817608.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image_url: "https://images.pexels.com/photos/1010645/pexels-photo-1010645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       name: "Phuket",
@@ -349,7 +349,7 @@ end
     destination: "Santorini",
     arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
     departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-    image_url: "https://images.pexels.com/photos/4817608/pexels-photo-4817608.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image_url: "https://images.pexels.com/photos/1010645/pexels-photo-1010645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     description: Faker::Lorem.paragraph
   )
 
@@ -393,4 +393,3 @@ end
       image_url: "https://images.pexels.com/photos/16778460/pexels-photo-16778460/free-photo-of-old-gothic-castle-with-bridge-under-river.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       description: Faker::Lorem.paragraph
     )
-
