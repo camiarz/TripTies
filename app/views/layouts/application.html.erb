@@ -16,12 +16,14 @@
   </head>
 
   <body>
-
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == "pages" && action_name == "home"%>
+      <%= render 'shared/navbar' %>
+    <% end %>
       <%= yield %>
 
       <%# Do not remove this class, helps give a spacing between the bottom of the page and footer %>
       <div class="footer-push"></div>
-      <%= render 'shared/footer' unless request.fullpath == '/' || request.fullpath.include?('users') %>
+
+        <%= render 'shared/footer' unless request.fullpath == '/' || request.fullpath.include?('users') %>
   </body>
 </html>

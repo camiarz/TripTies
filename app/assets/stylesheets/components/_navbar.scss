@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
+  background: #ffffff;
   z-index: 1000;
+  color: #000000;
+  height: 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,5 +21,19 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
+/* Adjusted to ensure dropdown text remains black */
+.navbar-lewagon .dropdown-item {
+  color: #000000 !important;
+}
+
+/* Ensure user name color is black always */
+.navbar-lewagon .navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+/* Override hover effect on user name */
+.navbar-lewagon .navbar-nav .nav-link:hover {
+  color: #000000 !important;
 }
