@@ -60,12 +60,12 @@ Match.destroy_all
 User.destroy_all
 
 
-file0 = URI.open('https://images.unsplash.com/photo-1619895862022-09114b41f16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+file0 = URI.open('https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 user0 = User.create!(
   first_name: "Camila",
   last_name: "Ruiz",
   age: Faker::Number.between(from: 18, to: 30),
-  bio: "Adventuring through life, one mountain at a time ⛰️. On a mission to explore the extraordinary 🌌. Finding joy in the journey, not just the destination 🌞🛤️. Yoga nomad, rolling out my mat worldwide 🌏🌟",
+  bio: "Adventuring through life, one mountain at a time. On a mission to explore the extraordinary🌞🛤️.",
   email: "camila@gmail.com",
   password: "password"
 )
@@ -77,7 +77,7 @@ user01 = User.new(
   first_name: "Ougesh",
   last_name: "Sarabadu",
   age: Faker::Number.between(from: 18, to: 90),
-  bio: "Sunset chaser and sunrise lover 🌅. Lost in the beauty of Mother Earth 🌎. Nature is my happy place 🍃. Exploring traditions, one city’s story at a time 🏯. Ancient whispers in modern times 📜🏺",
+  bio: "Sunset chaser and sunrise lover 🌅. Lost in the beauty of Mother Earth 🌎.",
   email: "ougesh@gmail.com",
   password: "password"
 )
