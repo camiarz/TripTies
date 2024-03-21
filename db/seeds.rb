@@ -65,6 +65,7 @@ user0 = User.create!(
   first_name: "Camila",
   last_name: "Ruiz",
   age: Faker::Number.between(from: 18, to: 30),
+  bio: "Adventuring through life, one mountain at a time ⛰️. On a mission to explore the extraordinary 🌌. Finding joy in the journey, not just the destination 🌞🛤️. Yoga nomad, rolling out my mat worldwide 🌏🌟",
   email: "camila@gmail.com",
   password: "password"
 )
@@ -76,6 +77,7 @@ user01 = User.new(
   first_name: "Ougesh",
   last_name: "Sarabadu",
   age: Faker::Number.between(from: 18, to: 90),
+  bio: "Sunset chaser and sunrise lover 🌅. Lost in the beauty of Mother Earth 🌎. Nature is my happy place 🍃. Exploring traditions, one city’s story at a time 🏯. Ancient whispers in modern times 📜🏺",
   email: "ougesh@gmail.com",
   password: "password"
 )
