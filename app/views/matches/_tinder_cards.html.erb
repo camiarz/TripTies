@@ -6,6 +6,10 @@
           <div class="tinder-card-details">
             <h2><%= trip.user.fullname %></h2>
             <p><%= trip.user.age %></p>
+
+          </div>
+          <div class="tinder-card-details2">
+            <p><%= trip.user.bio %></p>
           </div>
           <div>
             <% trip.interests.first(3) do |interest| %>
