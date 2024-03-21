@@ -211,11 +211,23 @@ img.chat_avatar {
 }
 
 .match-card{
-  padding-top: 14px;
-  background-color: #efefef;
   height: 12vh;
+  border: none;
 }
 
-.fa-arrow-left{
+.card-title{
   color: #000;
+}
+
+hr.gradient {
+  height: 3px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+   rgb(216, 213, 213) 0%,
+    rgb(142, 137, 137) 21%,
+    rgb(65, 63, 63) 51%,
+    black 100%
+  );
 }
