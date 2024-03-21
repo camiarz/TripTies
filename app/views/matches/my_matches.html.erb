@@ -1,16 +1,15 @@
 <div class="container">
   <div class="title"><h1>My Matches</h1></div>
 
-    <div class="chat">
   <% @my_matches.each do |match| %>
   <%= link_to match_chatroom_path(match, match.chatroom) do%>
       <div class="card flex-row match-card">
         <% if current_user == match.user1 %>
         <img class="card-img-left" src="<%= cl_image_path match.user2.photo.key%>"/>
         <% else %>
-        <%= match.user1.fullname %>
         <img class="card-img-left" src="<%= cl_image_path match.user1.photo.key%>"/>
         <% end %>
+<div>
         <div class="card-body">
           <h4 class="card-title">
           <% if current_user == match.user1 %>
@@ -19,9 +18,14 @@
           <%= match.user1.fullname %>
           <% end %>
           </h4>
+
+
+  </div>
+  <hr class="gradient">
   </div>
 </div>
   <% end%>
+
     <% end%>
-</div>
+
 </div>
