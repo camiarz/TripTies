@@ -224,3 +224,24 @@
 
 /* Profile card styles */
 
+.match-card{
+  height: 12vh;
+  border: none;
+}
+
+.card-title{
+  color: #000;
+}
+
+hr.gradient {
+  height: 3px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+   rgb(216, 213, 213) 0%,
+    rgb(142, 137, 137) 21%,
+    rgb(65, 63, 63) 51%,
+    black 100%
+  );
+}
