@@ -20,9 +20,8 @@
         </div>
       </div>
       <div class="trip-arrival"><%= trip.arrival.strftime("%d %B") %> - <%= trip.departure.strftime("%d %B") %></div>
-    </div>
-        <div class="interest"><% trip.interests.each do |interest| %>
-            <%= interest.name %>
+        <div class="interest" ><% trip.interests.each do |interest| %>
+            <div class="tag-interest"><%= interest.name %></div>
             <% end %>
           </div>
     <div class="my-trips-buttons">
@@ -33,6 +32,7 @@
         <%= link_to "Cancel", trip_path(trip), data: { "turbo-method": :delete } %>
       </div>
 
+    </div>
     </div>
   </div>
   <% end %>

@@ -329,12 +329,12 @@ countries = [
     {
       name: "Sevilla",
       image_url: "https://images.pexels.com/photos/16778460/pexels-photo-16778460/free-photo-of-old-gothic-castle-with-bridge-under-river.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
+    }
     ]
 
 100.times do
-    country = countries.sample
-    Trip.create!(
+  country = countries.sample
+  Trip.create!(
       user: User.order("RANDOM()").first,
       destination: country[:name],
       image_url: country[:image_url],
