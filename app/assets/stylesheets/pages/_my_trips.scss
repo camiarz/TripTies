@@ -11,9 +11,16 @@
   margin:15px;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  height:300px;
+  height:350px;
   padding: 25px;
-  color:rgb(255, 255, 255);
+  color:rgb(8, 8, 8);
+
+}
+
+.interest{
+  min-height:120px;
+  line-height:1.4;
+  margin-bottom: 5px;
 }
 
 // .container{
@@ -24,7 +31,7 @@
 
 .my-trips-buttons{
   display: flex;
-  margin-top: 120px;
+
   gap: 0.5rem;
 }
 
@@ -32,7 +39,7 @@
 //   color:rgb(0, 0, 0);
 // }
 .match-button{
-  background-color:#079fad;
+  background-color:#709775;
   border-radius: 15px;
   padding:8px;
   text-align: center;
@@ -40,6 +47,14 @@
   a{
     color:white;
   }
+}
+
+.details{
+  background-color: #e5e5ea81;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.2rem;
+
 }
 
 .button-cancel{
@@ -60,8 +75,8 @@
   text-align: center;
   padding:20px;
   margin-top: 10px;
-  font-size: 2.5rem;
-  color:black;
+  font-size: 1.7rem;
+  color:#709775;
 
 }
 
@@ -83,7 +98,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+
   }
 
   .edit-button {
@@ -93,10 +111,13 @@
   }
 
   .trip-arrival {
-    margin-top: 30px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+
   }
 
   .card_match{
@@ -115,7 +136,7 @@
 
 
 h2 {
-  	text-shadow: 1px 1px 2px rgba(0,0,0,1);
+  text-shadow: 1px 1px 2px rgba(0,0,0,1);
 	color: #fff;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -272,4 +293,19 @@ p[class^="from-"].emoji::before {
 
 .fa-arrow-left{
   color: #000;
+}
+
+
+
+.tag-interest{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #fefefebc;
+  color: #000000;
+  border: 1px solid #ffffff;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
 }

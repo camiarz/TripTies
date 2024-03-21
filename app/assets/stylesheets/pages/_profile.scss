@@ -1,14 +1,15 @@
 .profile_card {
-  width: 350px;
-  background-color: #efefef;
-  border: none;
-  cursor: pointer;
-  transition: all 0.5s;
+  margin:15px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  height:600px;
+  padding: 25px;
+  color:rgb(0, 0, 0);
+  width:20cm;
 }
 
-.profile_card:hover .image img {
-  transform: scale(1.5)
-}
+
+
 
 .profile_name {
   font-size: 22px;
@@ -96,7 +97,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-     align-items: center;
+    align-items: center;
     height: 45px;
 }
 .phone_head .title{
@@ -225,7 +226,7 @@ hr.gradient {
   border-radius: 6px;
   background: linear-gradient(
     90deg,
-   rgb(216, 213, 213) 0%,
+    rgb(216, 213, 213) 0%,
     rgb(142, 137, 137) 21%,
     rgb(65, 63, 63) 51%,
     black 100%
