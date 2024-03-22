@@ -93,14 +93,14 @@ a:link{
   font-size: 0.9rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  background-color: #dda15e;
-  color: #ffffff;
-  border: 1px solid #DDA15E;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #709775;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: #ffca86;
-  color: rgb(4, 4, 4);
+  background-color: #709775;
+  color: #FFFFFF;
 }
