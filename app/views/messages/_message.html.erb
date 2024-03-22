@@ -2,9 +2,13 @@
 
   <div class="imessage">
     <% if current_user == message.user %>
-    <p class="from-me"><%= message.content %></p>
+    <div class=message-time-me><%= message.user.fullname %></div>
+    <p class="from-me">
+      <%= message.content %>
+      </p>
     <div class=message-time-me><%= message.created_at.strftime('%m/%d/%Y %H:%M') %></div>
     <% else %>
+    <div class=message-time-me><%= message.user.fullname %></div>
     <p class="from-them"><%= message.content %></p>
     <div class=message-time-them><%= message.created_at.strftime('%m/%d/%Y %H:%M') %></div>
     <% end %>

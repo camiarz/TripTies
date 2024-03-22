@@ -62,11 +62,11 @@ User.destroy_all
 
 file0 = URI.open('https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 user0 = User.create!(
-  first_name: "Camila",
-  last_name: "Ruiz",
+  first_name: "Eugenie",
+  last_name: "Elisa",
   age: Faker::Number.between(from: 18, to: 30),
   bio: "Adventuring through life, one mountain at a time. On a mission to explore the extraordinary🌞🛤️.",
-  email: "camila@gmail.com",
+  email: "eugenie@gmail.com",
   password: "password"
 )
 user0.photo.attach(io: file0, filename: 'photo', content_type: 'image/png')
@@ -74,11 +74,11 @@ user0.save!
 
 file01 = URI.open('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 user01 = User.new(
-  first_name: "Ougesh",
-  last_name: "Sarabadu",
+  first_name: "Camila",
+  last_name: "Ruiz",
   age: Faker::Number.between(from: 18, to: 90),
   bio: "Sunset chaser and sunrise lover 🌅. Lost in the beauty of Mother Earth 🌎.",
-  email: "ougesh@gmail.com",
+  email: "camila@gmail.com",
   password: "password"
 )
 user01.photo.attach(io: file01, filename: 'photo', content_type: 'image/png')
@@ -332,12 +332,35 @@ countries = [
       name: "Sevilla",
       image_url: "https://images.pexels.com/photos/16778460/pexels-photo-16778460/free-photo-of-old-gothic-castle-with-bridge-under-river.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
+
     ]
 
-100.times do
+    3.times do
+      Trip.create!(
+          user: User.where.not(email: "eugenie@gmail.com").order("RANDOM()").first,
+          destination: "China",
+          image_url: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?q=80&w=2070&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
+          departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
+          description: Faker::Lorem.paragraph,
+        )
+    end
+
+    trip = Trip.create!(
+      user: user01,
+      destination: "China",
+      arrival: Faker::Date.between(from: Date.today, to: 2.years.from_now),
+      departure: Faker::Date.between(from: 1.day.from_now, to: 2.years.from_now),
+      image_url: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?q=80&w=2070&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: Faker::Lorem.paragraph
+    )
+
+
+
+50.times do
   country = countries.sample
   Trip.create!(
-      user: User.order("RANDOM()").first,
+      user: User.where.not(email: "eugenie@gmail.com").order("RANDOM()").first,
       destination: country[:name],
       image_url: country[:image_url],
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
@@ -362,28 +385,6 @@ end
       arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
       departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
       image_url: "https://images.pexels.com/photos/161820/monument-valley-west-western-161820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      description: Faker::Lorem.paragraph
-    )
-
-
-
-    trip = Trip.create!(
-      user: user01,
-      destination: "Phuket",
-      arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
-      departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      image_url: "https://images.pexels.com/photos/18223260/pexels-photo-18223260/free-photo-of-phi-phi-island.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      description: Faker::Lorem.paragraph
-    )
-
-
-
-    trip = Trip.create!(
-      user: user01,
-      destination: "Machu Picchu",
-      arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
-      departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
-      image_url: "https://images.pexels.com/photos/5952571/pexels-photo-5952571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       description: Faker::Lorem.paragraph
     )
 
