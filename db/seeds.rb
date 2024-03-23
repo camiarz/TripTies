@@ -355,6 +355,16 @@ countries = [
       description: Faker::Lorem.paragraph
     )
 
+    1.times do
+      Trip.create!(
+          user: User.where.not(email: "eugenie@gmail.com").order("RANDOM()").first,
+          destination: "China",
+          image_url: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?q=80&w=2070&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          arrival: Faker::Date.between(from: Date.today, to: 1.years.from_now),
+          departure: Faker::Date.between(from: 1.day.from_now, to: 1.years.from_now),
+          description: Faker::Lorem.paragraph,
+        )
+    end
 
 
 50.times do
